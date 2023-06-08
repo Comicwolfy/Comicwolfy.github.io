@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<hl>Server Scratch /hl>
+
+<p>A future server lister for games in the future. Minecraft gmod and etc. With regular updates, Email is Comicwolfy3@gmail.com for help</p>
+
+
+<link rel="stylesheet" href="h1 [".css"/>
+    
+</template>
+</html>
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Listing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    main {
+      margin: 20px;
+    }
+    
+    form {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    
+    form label,
+    form input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    form input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .server {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .server h2 {
+      margin: 0;
+    }
+    
+    .server p {
+      margin: 5px 0;
+    }
+    
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Server Listing</h1>
+  </header>
+  
+  <main>
+    <!-- Login form -->
+    <form id="loginForm">
+      <h2>Login</h2>
+      <div class="error" id="loginError"></div>
+      
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" name="username" required>
+      
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="password" required>
+      
+      <input type="submit" value="Login">
+    </form>
+    
+    <!-- Register form -->
+    <form id="registerForm" style="display: none;">
+      <h2>Register</h2>
+      <div class="error" id="registerError"></div>
+      
+      <label for="registerUsername">Username:</label>
+      <input type="text" id="registerUsername" name="username" required>
+      
+      <label for="registerPassword">Password:</label>
+      <input type="password" id="registerPassword" name="password" required>
+      
+      <input type="submit" value="Register">
+    </form>
+    
+    <!-- Display server listings -->
+    <div class="server">
+      <h2>Server 1</h2>
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Address: server1.example.com</p>
+    </div>
+    
+    <div class="server">
+      <h2>Server 2</h2>
+      <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Address: server2.example.com</p>
+    </div>
+    
+    <script>
+      // Login form submission handler
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var username = document.getElementById("loginUsername").value;
+        var password = document.getElementById("loginPassword").value;
+        
+        // Perform
+
