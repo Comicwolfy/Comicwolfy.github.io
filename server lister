@@ -1,0 +1,39 @@
+import requests
+import socket
+
+def get_minecraft_server_status(ip, port):
+    try:
+        with socket.create_connection((ip, port), timeout=2) as sock:
+            return "Online"
+    except (socket.timeout, ConnectionRefusedError):
+        return "Offline"
+
+def get_gmod_server_status(ip, port):
+    try:
+        response = requests.get(f"https://api.steampowered.com/IGameServersService/GetServerList/v1/?key=YOUR_STEAM_API_KEY&filter=\"addr\{ip}:{port}\"&format=json")
+        data = response.json()
+        if data and "response" in data and "servers" in data["response"] and len(data["response"]["servers"]) > 0:
+            return "Online"
+        else:
+            return "Offline"
+    except Exception:
+        return "Offline"
+
+def list_servers(servers):
+    for server in servers:
+        game, ip, port = server["game"], server["ip"], server["port"]
+        if game == "Minecraft":
+            status = get_minecraft_server_status(ip, port)
+        elif game == "GMod":
+            status = get_gmod_server_status(ip, port)
+        else:
+            status = "Unknown Game"
+        
+        print(f"{game} Server @ {ip}:{port} - Status: {status}")
+
+servers = [
+    {"game": "Minecraft", "ip": "example.com", "port": 25565},
+    {"game": "GMod", "ip": "example.com", "port": 27015}
+]
+
+list_servers(servers)
